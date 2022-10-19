@@ -6,7 +6,7 @@ class Program
         Write("Введите число N: ");
         int n = int.Parse(ReadLine()!);
 
-        if (n < 1) throw new Exception("Ожидается N > 0");
+        if (n < 1) throw new System.Exception("Ожидается N > 0");
 
         WriteLine(NumToString(n));
 
