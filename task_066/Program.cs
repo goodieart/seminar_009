@@ -1,10 +1,11 @@
-﻿using static System.Console;
+﻿using Lib;
+using static System.Console;
 class Program
 {
     static void Main(string[] args)
     {
         Write("Введите числа M,N: ");
-        int[] arg = GetUserInput(",");
+        int[] arg = Parser.GetUserInput(",");
 
         if (arg[0] >= arg[1]) throw new System.Exception("Ожидается M < N");
 
@@ -14,13 +15,5 @@ class Program
         {
             return m < n ? n + NumSum(m, n - 1) : n;
         }
-
-        static int[] GetUserInput(string separator = " ")
-        {
-            return Console.ReadLine()!.Split(separator, StringSplitOptions.RemoveEmptyEntries)
-                                      .Select(item => int.Parse(item))
-                                      .ToArray();
-        }
-
     }
 }
